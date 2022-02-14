@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class TestCase1 {
 
     private static WebDriver driver;
@@ -33,12 +35,14 @@ public class TestCase1 {
         driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[3]/td[2]/div/div")).click();
         driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[3]/div/div")).click();
 
+        assertEquals("1", driver.findElement(By.cssSelector("span#cwos.qv3Wpe")).getText());
+        assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", driver.findElement(By.cssSelector("span.vUGUtc")).getText());
   //      driver.quit();
     }
 
-      @AfterAll
-      public static void teardown() {
-          driver.quit();
-      }
+ //     @AfterAll
+ //     public static void teardown() {
+//          driver.quit();
+//      }
 
 }
