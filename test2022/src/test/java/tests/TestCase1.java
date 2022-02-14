@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,7 +16,9 @@ public class TestCase1 {
    @BeforeAll
    public static void init() {
        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-       driver = new ChromeDriver();
+       ChromeOptions options = new ChromeOptions();
+       options.addArguments("start-maximized");
+       driver = new ChromeDriver(options);
      }
 
     @Test
@@ -37,12 +40,11 @@ public class TestCase1 {
 
         assertEquals("1", driver.findElement(By.cssSelector("span#cwos.qv3Wpe")).getText());
         assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", driver.findElement(By.cssSelector("span.vUGUtc")).getText());
-  //      driver.quit();
-    }
+     }
 
- //     @AfterAll
- //     public static void teardown() {
-//          driver.quit();
-//      }
+      @AfterAll
+      public static void teardown() {
+         driver.quit();
+      }
 
 }
