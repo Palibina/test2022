@@ -24,7 +24,7 @@ public class TestCase1 {
      }
 
     @Test
-    public void test() {
+    public void test1() {
         driver.get("https://google.com");
         driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
         driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[1]/td[1]/div/div")).click();
@@ -43,6 +43,32 @@ public class TestCase1 {
         assertEquals("1", driver.findElement(By.cssSelector("span#cwos.qv3Wpe")).getText());
         assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", driver.findElement(By.cssSelector("span.vUGUtc")).getText());
      }
+
+
+
+    public void test2() {
+        driver.get("https://google.com");
+        driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
+        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[3]/td[3]/div/div")).click();
+        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[2]/td[4]/div/div")).click();
+        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[1]/div/div")).click();
+        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[3]/div/div")).click();
+
+        assertEquals("Infinity", driver.findElement(By.cssSelector("span#cwos.qv3Wpe")).getText());
+        assertEquals("6 ÷ 0 =", driver.findElement(By.cssSelector("span.vUGUtc")).getText());
+    }
+
+    public void test3() {
+        driver.get("https://google.com");
+        driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
+        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[1]/tbody/tr[2]/td[2]/div/div[1]")).click();
+        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[1]/td[2]/div/div")).click();
+        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[3]/div/div")).click();
+
+        assertEquals("Error", driver.findElement(By.cssSelector("span#cwos.qv3Wpe")).getText());
+        assertEquals("sin() =", driver.findElement(By.cssSelector("span.vUGUtc")).getText());
+        assertEquals("rgba(204, 204, 204, 1)", driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[1]/div[2]/div[1]/div/span/span")).getCssValue("color"));
+    }
 
 
  //     @AfterAll
