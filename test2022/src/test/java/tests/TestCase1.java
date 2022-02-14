@@ -5,13 +5,14 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chrome.ChromeOptions;//
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestCase1 {
 
     private static WebDriver driver;
+//  private static SearchPage searchPage;
 
    @BeforeAll
    public static void init() {
@@ -19,10 +20,11 @@ public class TestCase1 {
        ChromeOptions options = new ChromeOptions();
        options.addArguments("start-maximized");
        driver = new ChromeDriver(options);
+//     searchPage = new SearchPage(driver);
      }
 
     @Test
-    public void test1() {
+    public void test() {
         driver.get("https://google.com");
         driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
         driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[1]/td[1]/div/div")).click();
@@ -42,9 +44,10 @@ public class TestCase1 {
         assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", driver.findElement(By.cssSelector("span.vUGUtc")).getText());
      }
 
-      @AfterAll
-      public static void teardown() {
-         driver.quit();
-      }
+
+ //     @AfterAll
+ //     public static void teardown() {
+ //        driver.quit();
+ //     }
 
 }
