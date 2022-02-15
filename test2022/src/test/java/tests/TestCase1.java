@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;//
 import pages.SearchPage;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestCase1 {
@@ -43,41 +44,48 @@ public class TestCase1 {
         searchPage.zero.click();
         searchPage.segmentation.click();
         searchPage.five.click();
+        searchPage.equally.click();
 
-        assertEquals("1", searchPage.results.getText());
-        assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", searchPage.formula.getText());
+        assertAll(
+                () -> assertEquals("1", searchPage.results.getText()),
+                () -> assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", searchPage.formula.getText())
+        );
      }
 
     @Test
     @DisplayName("Проверка деления на ноль")
     public void test2() {
-        driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
-        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[3]/td[3]/div/div")).click();
-        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[2]/td[4]/div/div")).click();
-        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[1]/div/div")).click();
-        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[3]/div/div")).click();
+        searchPage.searchInput.sendKeys("калькулятор", Keys.ENTER);
+        searchPage.six.click();
+        searchPage.segmentation.click();
+        searchPage.zero.click();
+        searchPage.equally.click();
 
-        assertEquals("Infinity", driver.findElement(By.cssSelector("span#cwos.qv3Wpe")).getText());
-        assertEquals("6 ÷ 0 =", driver.findElement(By.cssSelector("span.vUGUtc")).getText());
+        assertAll(
+                () -> assertEquals("Infinity", searchPage.results.getText()),
+                () -> assertEquals("6 ÷ 0 =", searchPage.formula.getText())
+        );
     }
 
     @Test
     @DisplayName("Проверка ошибки при отсутсвии значения")
     public void test3() {
-        driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
-        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[1]/tbody/tr[2]/td[2]/div/div[1]")).click();
-        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[1]/td[2]/div/div")).click();
-        driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[3]/div/div")).click();
+        searchPage.searchInput.sendKeys("калькулятор", Keys.ENTER);
+        searchPage.sin.click();
+        searchPage.closeClamp.click();
+        searchPage.equally.click();
 
-        assertEquals("Error", driver.findElement(By.cssSelector("span#cwos.qv3Wpe")).getText());
-        assertEquals("sin() =", driver.findElement(By.cssSelector("span.vUGUtc")).getText());
-        assertEquals("rgba(204, 204, 204, 1)", driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[1]/div[2]/div[1]/div/span/span")).getCssValue("color"));
+        assertAll(
+        () -> assertEquals("Error", searchPage.results.getText()),
+        () -> assertEquals("sin() =", searchPage.formula.getText()),
+        () -> assertEquals("rgba(204, 204, 204, 1)", searchPage.Clamp.getCssValue("color"))
+        );
     }
 
 
- //     @AfterAll
- //     public static void teardown() {
- //        driver.quit();
- //     }
+      @AfterAll
+      public static void teardown() {
+         driver.quit();
+      }
 
 }
