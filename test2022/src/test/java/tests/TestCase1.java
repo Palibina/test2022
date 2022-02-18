@@ -67,20 +67,6 @@ public class TestCase1 {
         );
     }
 
-    @Test
-    @DisplayName("Проверка ошибки при отсутсвии значения")
-    public void test3() {
-        searchPage.searchInput.sendKeys("калькулятор", Keys.ENTER);
-        searchPage.sin.click();
-        searchPage.closeClamp.click();
-        searchPage.equally.click();
-
-        assertAll(
-        () -> assertEquals("Error", searchPage.results.getText()),
-        () -> assertEquals("sin() =", searchPage.formula.getText()),
-        () -> assertEquals("rgba(204, 204, 204, 1)", searchPage.Clamp.getCssValue("color"))
-        );
-    }
 
 
       @AfterAll
