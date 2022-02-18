@@ -12,52 +12,52 @@ public class SearchPage {
     @FindBy(css = "input.gLFyf.gsfi")
     public WebElement searchInput;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[1]/td[1]/div/div")
+    @FindBy(css = "[jsname*='j93WEe']")
     public WebElement openClamp;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[4]/td[1]/div/div")
+    @FindBy(css = "[jsname*='N10B9']")
     public WebElement one;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[4]/div/div")
+    @FindBy(css = "[jsname*='XSr6wc']")
     public WebElement plus;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[4]/td[2]/div/div")
+    @FindBy(css = "[jsname*='lVjWed']")
     public WebElement two;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[1]/td[2]/div/div")
+    @FindBy(css = "[jsname*='qCp9A']")
     public WebElement closeClamp;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[3]/td[4]/div/div")
+    @FindBy(css = "[jsname*='YovRWb']")
     public WebElement multiply;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[4]/td[3]/div/div")
+    @FindBy(css = "[jsname*='KN1kY']")
     public WebElement three;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[4]/td[4]/div/div")
+    @FindBy(css = "[jsname*='pPHzQc']")
     public WebElement minus;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[3]/td[1]/div/div")
+    @FindBy(css = "[jsname*='xAP7E']")
     public WebElement four;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[1]/div/div")
+    @FindBy(css = "[jsname*='bkEvMb']")
     public WebElement zero;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[2]/td[4]/div/div")
+    @FindBy(css = "[jsname*='WxTTNd']")
     public WebElement segmentation;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[3]/td[2]/div/div")
+    @FindBy(css = "[jsname*='Ax5wH']")
     public WebElement five;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[3]/div/div")
+    @FindBy(css = "[jsname*='Pt8tGc']")
     public WebElement equally;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[3]/td[3]/div/div")
+    @FindBy(css = "[jsname*='abcgof']")
     public WebElement six;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[1]/tbody/tr[2]/td[2]/div/div[1]")
+    @FindBy(css = "[jsname*='aN1RFf']")
     public WebElement sin;
 
-    @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div/div[1]/div/div/div[1]/div[2]/div[1]/div/span/span")
+    @FindBy(css = "span.vUGUtc span")
     public WebElement Clamp;
 
 
